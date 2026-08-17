@@ -1,5 +1,5 @@
 import React from "react";
-import { Music, Trophy, Gamepad2, Heart, Flame, Sparkles, Calendar, Clock, CheckCircle2, MessageCircle } from "lucide-react";
+import { Music, Trophy, Gamepad2, Heart, Flame, Sparkles, Calendar, CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { WEEKEND_DELICACIES, RESTAURANT_INFO } from "@/data/restaurantData";
 import { Button } from "@/components/ui/button";
 
@@ -53,33 +53,66 @@ export const WeekendExperience: React.FC = () => {
         </div>
 
         {/* Big Weekend Showcase Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 items-center">
           
-          {/* Delicacies Lineup Card with the real flyer poster on the side */}
-          <div className="lg:col-span-7 bg-stone-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
+          {/* Full Flyer Display Container (Uncropped, Full Aspect Ratio) */}
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="relative group max-w-md sm:max-w-lg w-full">
+              {/* Outer Golden Ambient Glow */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-amber-500/30 via-orange-600/20 to-yellow-500/30 rounded-3xl opacity-50 blur-xl group-hover:opacity-75 transition-opacity" />
+              
+              <div className="relative bg-stone-900 border-2 border-amber-500/40 rounded-3xl p-3 sm:p-4 shadow-2xl overflow-hidden flex flex-col items-center">
+                
+                {/* Image element with object-contain and natural portrait aspect ratio */}
+                <div className="w-full flex items-center justify-center rounded-2xl overflow-hidden bg-stone-950">
+                  <img
+                    src="/images/weekend-experience.jpg"
+                    alt="Ezeji Weekend Experience official flyer featuring bush meat, roasted yam, live band, games, and competitions"
+                    className="w-full h-auto max-h-[750px] object-contain rounded-xl shadow-inner transition-transform duration-500 group-hover:scale-[1.01]"
+                  />
+                </div>
+
+                {/* Quick caption under flyer */}
+                <div className="mt-3 flex items-center justify-between w-full px-2 text-xs text-stone-300">
+                  <span className="font-semibold text-amber-400 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Every Saturday & Sunday
+                  </span>
+                  <span className="text-stone-400 text-[11px]">
+                    From 4:00 PM Till Midnight
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Highlights & Delicacy Lineup */}
+          <div className="lg:col-span-6 space-y-6">
+            
+            {/* Delicacies Lineup Card */}
+            <div className="bg-stone-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-4">
+              <div className="flex items-center gap-2">
                 <Flame className="w-5 h-5 text-orange-500" />
                 <h3 className="text-xl font-serif font-bold text-amber-300">
                   Featured Weekend Delicacy Lineup
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-stone-400 mb-6">
-                Specialty pots bubbling with exotic meats, native soups, and hot off-the-fire treats available all through Saturday & Sunday:
+              <p className="text-xs sm:text-sm text-stone-400">
+                Authentic pots bubbling with exotic meats, native soups, and hot off-the-fire treats all weekend:
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {WEEKEND_DELICACIES.map((delicacy, i) => (
                   <div
                     key={i}
-                    className="bg-stone-950/80 border border-stone-800/90 rounded-xl p-3 hover:border-amber-500/40 transition-colors flex items-start gap-2.5"
+                    className="bg-stone-950/80 border border-stone-800/90 rounded-xl p-2.5 hover:border-amber-500/40 transition-colors flex items-start gap-2"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs sm:text-sm font-bold text-stone-200">
+                      <div className="text-xs font-bold text-stone-200">
                         {delicacy.name}
                       </div>
-                      <div className="text-[11px] text-stone-400">
+                      <div className="text-[10px] text-stone-400">
                         {delicacy.desc}
                       </div>
                     </div>
@@ -88,65 +121,59 @@ export const WeekendExperience: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-stone-800 flex flex-wrap items-center justify-between gap-4">
-              <div className="text-xs text-stone-400">
-                <span className="text-amber-400 font-semibold">Special:</span> Catfish Pepper Soup prepared on order!
-              </div>
-              <a
-                href={RESTAURANT_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="sm" className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold rounded-xl text-xs">
-                  Reserve Weekend Table
-                </Button>
-              </a>
-            </div>
-          </div>
-
-          {/* Real Weekend Experience Poster & Highlights */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-stone-900 via-stone-950 to-stone-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
-            <div>
-              <div className="relative rounded-2xl overflow-hidden mb-6 border border-amber-500/40 shadow-xl group">
-                <img
-                  src="/images/weekend-experience.jpg"
-                  alt="Ezeji Weekend Experience official poster"
-                  className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-stone-100">
-                  <span className="text-[10px] font-bold bg-amber-500 text-stone-950 px-2 py-0.5 rounded uppercase tracking-wider">
-                    Every Sat & Sun
-                  </span>
-                  <div className="font-serif font-bold text-sm mt-1">
-                    Live Band • Bush Meat • Games & Prizes
+            {/* Experience Perks Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {experiences.map((exp, idx) => {
+                const Icon = exp.icon;
+                return (
+                  <div key={idx} className="flex items-start gap-3 bg-stone-900/90 p-3.5 rounded-2xl border border-stone-800/90">
+                    <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-stone-200">{exp.title}</h4>
+                      <p className="text-[11px] text-stone-400 leading-snug mt-0.5">{exp.desc}</p>
+                    </div>
                   </div>
+                );
+              })}
+            </div>
+
+            {/* Action Bar */}
+            <div className="bg-gradient-to-r from-amber-500/10 via-stone-900 to-orange-500/10 border border-amber-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3.5">
+              <div className="text-center sm:text-left">
+                <div className="text-xs font-serif font-bold text-amber-300">
+                  “Good Food. Great Company. Lasting Memories.”
+                </div>
+                <div className="text-[11px] text-stone-400">
+                  Reserve your table before weekend seats fill up
                 </div>
               </div>
 
-              <div className="space-y-3">
-                {experiences.map((exp, idx) => {
-                  const Icon = exp.icon;
-                  return (
-                    <div key={idx} className="flex items-start gap-3 bg-stone-950/70 p-3 rounded-xl border border-stone-800/80">
-                      <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-stone-200">{exp.title}</h4>
-                        <p className="text-[11px] text-stone-400 leading-snug">{exp.desc}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <a
+                  href={RESTAURANT_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button size="sm" className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-stone-950 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md">
+                    <MessageCircle className="w-3.5 h-3.5 fill-stone-950" />
+                    Reserve via WhatsApp
+                  </Button>
+                </a>
+                <a
+                  href={`tel:${RESTAURANT_INFO.phone}`}
+                  className="w-full sm:w-auto"
+                >
+                  <Button size="sm" variant="outline" className="w-full sm:w-auto border-amber-500/40 text-amber-300 hover:bg-stone-800 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5" />
+                    Call
+                  </Button>
+                </a>
               </div>
             </div>
 
-            <div className="mt-5 bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-center">
-              <div className="text-xs font-serif italic text-amber-300 font-semibold">
-                “Good Food. Great Company. Lasting Memories. That’s the Ezeji Experience!”
-              </div>
-            </div>
           </div>
 
         </div>
