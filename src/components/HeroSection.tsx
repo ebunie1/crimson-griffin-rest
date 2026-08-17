@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Phone, MessageCircle, Utensils, Flame, Sparkles, MapPin, Clock } from "lucide-react";
+import { Star, Phone, MessageCircle, Utensils, Flame, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESTAURANT_INFO } from "@/data/restaurantData";
 
@@ -9,21 +9,22 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreMenu }) => {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center justify-center bg-stone-950 overflow-hidden text-stone-100">
-      {/* Background Ambience / Glow Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(245,158,11,0.15),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(234,88,12,0.12),transparent_50%)]" />
+    <section className="relative min-h-[92vh] sm:min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center justify-center bg-stone-950 overflow-hidden text-stone-100">
+      {/* Background Image - Real Restaurant Exterior */}
       <div 
-        className="absolute inset-0 opacity-15 mix-blend-overlay bg-cover bg-center pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity scale-105 pointer-events-none transition-transform duration-1000"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600&auto=format&fit=crop')`
+          backgroundImage: `url('/images/restaurant-exterior.jpg')`
         }}
       />
-      {/* Subtle Nigerian geometric border glow */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 opacity-80" />
+      {/* Warm Ambient Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-stone-950/60" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(245,158,11,0.18),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(234,88,12,0.15),transparent_50%)]" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 opacity-90" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Content */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
@@ -51,7 +52,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreMenu }) => {
 
             {/* Main Title */}
             <div>
-              <div className="text-amber-500 font-medium tracking-widest text-sm uppercase flex items-center justify-center lg:justify-start gap-2 mb-2">
+              <div className="text-amber-400 font-medium tracking-widest text-xs sm:text-sm uppercase flex items-center justify-center lg:justify-start gap-2 mb-2">
                 <Flame className="w-4 h-4 text-orange-500 animate-pulse" />
                 <span>GC Autocare Plaza, Trans Ekulu, Enugu</span>
               </div>
@@ -131,27 +132,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreMenu }) => {
 
           </div>
 
-          {/* Right Visual Platter Presentation */}
+          {/* Right Visual Platter Presentation - Real Ezeji Grilled Platter */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Decorative Glow ring */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-amber-500 via-orange-600 to-yellow-500 rounded-3xl opacity-30 blur-2xl animate-pulse" />
+              <div className="absolute -inset-2 bg-gradient-to-tr from-amber-500 via-orange-600 to-yellow-500 rounded-3xl opacity-35 blur-2xl animate-pulse" />
               
               {/* Main Dish Showcase Card */}
-              <div className="relative rounded-3xl bg-stone-900/90 border border-amber-500/30 overflow-hidden shadow-2xl p-3 sm:p-4 backdrop-blur-md">
-                <div className="relative h-72 sm:h-84 md:h-96 rounded-2xl overflow-hidden group">
+              <div className="relative rounded-3xl bg-stone-900/90 border border-amber-500/40 overflow-hidden shadow-2xl p-3 sm:p-4 backdrop-blur-md">
+                <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop"
-                    alt="Ezeji grilled delicacies, roasted yam and fish platter"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+                    src="/images/grilled-platter.jpg"
+                    alt="Ezeji real grilled platter with roasted yam, ugba, grilled corn and plantain"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
                   
-                  {/* Floating Overlay Pill: Ezeji Special */}
-                  <div className="absolute top-3 left-3 bg-stone-950/90 backdrop-blur-md border border-amber-500/40 text-amber-300 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  {/* Floating Overlay Pill */}
+                  <div className="absolute top-3 left-3 bg-stone-950/90 backdrop-blur-md border border-amber-500/50 text-amber-300 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg">
                     <Flame className="w-3.5 h-3.5 text-orange-400" />
-                    Roasted Yam, Ugba & Fish
+                    Roasted Yam, Ugba & Grills
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 text-stone-100">

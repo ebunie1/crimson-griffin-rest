@@ -14,28 +14,28 @@ export const TigerNutFeature: React.FC = () => {
         <div className="bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 border border-amber-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             
-            {/* Left Visual Presentation */}
+            {/* Left Visual Presentation with Real Tiger Nut Drink Photo */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group max-w-xs sm:max-w-sm w-full">
                 {/* Glow ring */}
-                <div className="absolute -inset-2 bg-gradient-to-tr from-amber-400 to-yellow-600 rounded-3xl opacity-25 blur-xl group-hover:opacity-40 transition-opacity" />
+                <div className="absolute -inset-2 bg-gradient-to-tr from-amber-400 to-yellow-600 rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity" />
                 
-                <div className="relative bg-stone-950 border border-amber-500/40 rounded-3xl p-4 overflow-hidden shadow-2xl">
+                <div className="relative bg-stone-950 border border-amber-500/40 rounded-3xl p-3 overflow-hidden shadow-2xl">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-stone-900 flex items-center justify-center relative">
                     <img
-                      src="https://images.unsplash.com/photo-1556881286-fc6915169721?q=80&w=800&auto=format&fit=crop"
-                      alt="Bottled creamy chilled Ezeji Tiger Nut Drink"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
+                      src="/images/tiger-nut-drink.jpg"
+                      alt="Real bottle of Eze Ji Tiger Nut Drink naturally prepared"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent" />
                     
                     {/* Bottle Label Floating Badge */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-stone-950/90 backdrop-blur-md border border-amber-500/50 rounded-xl p-3 text-center">
-                      <div className="text-amber-400 font-serif font-bold text-base">Eze Ji Tiger Nut</div>
-                      <div className="text-[11px] text-amber-200/80 uppercase tracking-widest font-semibold">
+                    <div className="absolute bottom-3 left-3 right-3 bg-stone-950/90 backdrop-blur-md border border-amber-500/50 rounded-xl p-2.5 text-center shadow-lg">
+                      <div className="text-amber-400 font-serif font-bold text-sm sm:text-base">Eze Ji Tiger Nut</div>
+                      <div className="text-[10px] sm:text-[11px] text-amber-200/80 uppercase tracking-widest font-semibold">
                         Naturally Prepared • Drink Healthy • Live Healthy
                       </div>
-                      <div className="text-xs text-stone-300 mt-1">
+                      <div className="text-xs text-stone-300 mt-0.5">
                         Chilled Bottle • ₦1,500
                       </div>
                     </div>

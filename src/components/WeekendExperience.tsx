@@ -48,14 +48,14 @@ export const WeekendExperience: React.FC = () => {
             “Authentic Flavors. Good Vibes. Unforgettable Moments.”
           </p>
           <p className="text-stone-300 text-sm sm:text-base">
-            Weekends at Ezeji are legendary. Join us every Saturday and Sunday for Enugu’s most entertaining cultural feast featuring live music, games, prizes, and rare local delicacies prepared to order.
+            Weekends at Ezeji are legendary. Join us every Saturday and Sunday for Coal City’s most entertaining cultural feast featuring live highlife music, games, prizes, and rare local delicacies prepared to order.
           </p>
         </div>
 
         {/* Big Weekend Showcase Box */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
           
-          {/* Delicacies Lineup Card */}
+          {/* Delicacies Lineup Card with the real flyer poster on the side */}
           <div className="lg:col-span-7 bg-stone-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -104,27 +104,37 @@ export const WeekendExperience: React.FC = () => {
             </div>
           </div>
 
-          {/* Atmosphere & Activities Card */}
+          {/* Real Weekend Experience Poster & Highlights */}
           <div className="lg:col-span-5 bg-gradient-to-br from-stone-900 via-stone-950 to-stone-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-5 h-5 text-amber-400" />
-                <h3 className="text-xl font-serif font-bold text-stone-100">
-                  Experience More Than Food
-                </h3>
+              <div className="relative rounded-2xl overflow-hidden mb-6 border border-amber-500/40 shadow-xl group">
+                <img
+                  src="/images/weekend-experience.jpg"
+                  alt="Ezeji Weekend Experience official poster"
+                  className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 text-stone-100">
+                  <span className="text-[10px] font-bold bg-amber-500 text-stone-950 px-2 py-0.5 rounded uppercase tracking-wider">
+                    Every Sat & Sun
+                  </span>
+                  <div className="font-serif font-bold text-sm mt-1">
+                    Live Band • Bush Meat • Games & Prizes
+                  </div>
+                </div>
               </div>
-              
-              <div className="space-y-4">
+
+              <div className="space-y-3">
                 {experiences.map((exp, idx) => {
                   const Icon = exp.icon;
                   return (
-                    <div key={idx} className="flex items-start gap-3.5 bg-stone-950/70 p-3.5 rounded-2xl border border-stone-800/80">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                        <Icon className="w-5 h-5" />
+                    <div key={idx} className="flex items-start gap-3 bg-stone-950/70 p-3 rounded-xl border border-stone-800/80">
+                      <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+                        <Icon className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-stone-200">{exp.title}</h4>
-                        <p className="text-xs text-stone-400 leading-relaxed mt-0.5">{exp.desc}</p>
+                        <h4 className="text-xs font-bold text-stone-200">{exp.title}</h4>
+                        <p className="text-[11px] text-stone-400 leading-snug">{exp.desc}</p>
                       </div>
                     </div>
                   );
@@ -132,7 +142,7 @@ export const WeekendExperience: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 text-center">
+            <div className="mt-5 bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-center">
               <div className="text-xs font-serif italic text-amber-300 font-semibold">
                 “Good Food. Great Company. Lasting Memories. That’s the Ezeji Experience!”
               </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, Utensils, Music, Flame, HeartHandshake } from "lucide-react";
+import { Sparkles, Utensils, Music, Flame, HeartHandshake, Package } from "lucide-react";
 import { RESTAURANT_INFO } from "@/data/restaurantData";
 
 export const AboutSection: React.FC = () => {
@@ -49,7 +49,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -71,29 +71,42 @@ export const AboutSection: React.FC = () => {
           })}
         </div>
 
-        {/* Experience banner strip */}
-        <div className="mt-12 bg-gradient-to-r from-amber-950/80 via-stone-950 to-orange-950/80 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-xl sm:text-2xl font-serif font-bold text-amber-300">
-              Indoor Comfort & Breezy Outdoor Relaxation
-            </h4>
-            <p className="text-sm text-stone-300 max-w-xl">
-              Located conveniently at GC Autocare Plaza, opposite Skyvilla Hotel, Trans Ekulu. Come unwind after work or celebrate with family.
-            </p>
+        {/* Real Takeaway Packaging & Dining Spotlight */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-stone-950 border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="lg:col-span-4 rounded-2xl overflow-hidden border border-amber-500/30 shadow-xl group">
+            <img
+              src="/images/takeaway-pack.jpg"
+              alt="Eze Ji authentic takeaway packaging and freshly prepared fish sauce"
+              className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <a
-              href={`tel:${RESTAURANT_INFO.phone}`}
-              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all shadow-md"
-            >
-              Call 08081111636
-            </a>
-            <a
-              href="#location"
-              className="bg-stone-900 border border-amber-500/40 hover:bg-stone-800 text-amber-300 font-semibold px-4 py-2.5 rounded-xl text-sm transition-all"
-            >
-              Get Directions
-            </a>
+          <div className="lg:col-span-8 space-y-4">
+            <div className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+              <Package className="w-3.5 h-3.5" />
+              Dine-In, Takeaway & Swift Delivery
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-stone-100">
+              Freshly Sealed & Delivered Piping Hot Across Enugu
+            </h3>
+            <p className="text-stone-300 text-sm leading-relaxed font-light">
+              Whether dining under our open-air canopy in Trans Ekulu or ordering takeaway meal packs to your home or office, every dish is prepared with fresh ingredients and packed securely to maintain that firewood-grilled aroma.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href={`tel:${RESTAURANT_INFO.phone}`}
+                className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md"
+              >
+                Call {RESTAURANT_INFO.phone}
+              </a>
+              <a
+                href={RESTAURANT_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-stone-900 border border-amber-500/40 hover:bg-stone-800 text-amber-300 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all"
+              >
+                Order Takeaway on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, Utensils, Plus, Check, Sparkles, Flame, Wine, Soup, Coffee, ShoppingBag } from "lucide-react";
+import { Search, Utensils, Plus, Check, Sparkles, Flame, Wine, Soup, Coffee, ShoppingBag, Eye } from "lucide-react";
 import { MENU_ITEMS, MenuItem } from "@/data/restaurantData";
 import { Button } from "@/components/ui/button";
 
@@ -41,6 +41,28 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItems
     return "₦" + amount.toLocaleString("en-NG");
   };
 
+  // Real food visual showcase cards
+  const foodShowcase = [
+    {
+      img: "/images/grilled-platter.jpg",
+      title: "Signature BBQ & Roasted Yam Platter",
+      desc: "Charcoal roasted yam, seasoned ugba, corn & barbecue fish",
+      price: "From ₦5,400",
+    },
+    {
+      img: "/images/jollof-rice-stew.jpg",
+      title: "White Rice, Stew & Fried Plantain",
+      desc: "Rich native tomato stew with tender protein and plantain dodo",
+      price: "₦4,900",
+    },
+    {
+      img: "/images/fried-rice-chicken.jpg",
+      title: "Eze Ji Seasoned Rice & Crispy Chicken",
+      desc: "Smoky firewood-style spiced rice with fresh salad & grilled poultry",
+      price: "₦4,900",
+    },
+  ];
+
   return (
     <section id="menu" className="py-20 bg-stone-950 text-stone-100 relative">
       {/* Subtle Background Glow */}
@@ -61,6 +83,36 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onAddToCart, cartItems
           <p className="text-stone-300 text-sm sm:text-base">
             All meals are freshly prepared on order with premium local condiments, firewood aroma, and pure Igbo culinary mastery.
           </p>
+        </div>
+
+        {/* Real Food Highlights Visual Gallery */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+          {foodShowcase.map((food, i) => (
+            <div
+              key={i}
+              className="bg-stone-900/90 border border-amber-500/30 rounded-2xl overflow-hidden group shadow-xl hover:border-amber-500/60 transition-all"
+            >
+              <div className="relative h-48 sm:h-56 overflow-hidden">
+                <img
+                  src={food.img}
+                  alt={food.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs">
+                  <span className="font-bold text-stone-100 bg-stone-950/80 px-2.5 py-1 rounded-md border border-stone-700">
+                    {food.title}
+                  </span>
+                  <span className="text-amber-400 font-serif font-bold bg-stone-950/90 px-2 py-1 rounded-md border border-amber-500/40">
+                    {food.price}
+                  </span>
+                </div>
+              </div>
+              <div className="p-3.5">
+                <p className="text-xs text-stone-400">{food.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Filter Tabs & Search Bar */}
