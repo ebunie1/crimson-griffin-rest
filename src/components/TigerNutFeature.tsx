@@ -1,6 +1,4 @@
 import React from "react";
-import {<dyad-write path="src/components/TigerNutFeature.tsx" description="Dedicated spotlight for Ezeji bottled Tiger Nut Drink with health benefits and WhatsApp direct order">
-import React from "react";
 import { Sparkles, Heart, ShieldCheck, Leaf, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESTAURANT_INFO } from "@/data/restaurantData";
